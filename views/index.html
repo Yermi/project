@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="scotchApp">
+<head>
+  <title>node</title>
+  <link rel="shortcut icon" href="mongodb_logo.ico" type="image/x-icon"/>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!-- SPELLS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="/javascripts/app.js"></script>
+  <script src="/javascripts/contentController.js"></script>
+  <script src="/javascripts/loginController.js"></script>
+  <script src="/javascripts/usersController.js"></script>
+  <script src="/javascripts/signupController.js"></script>
+
+
+</head>
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><strong>Node Express App</strong></a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+      <li ng-hide="profile.loggedIn"><a href="#login"><i class="fa fa-sign-in"></i> Login</a></li>
+      <li ng-hide="profile.loggedIn"><a href="#signup"><i class="fa fa-pencil-square-o"></i> Signup</a></li>
+      <li ng-show="profile.loggedIn"><a href="#users"><i class="fa fa-table"></i> Users</a></li>
+      <li ng-show="profile.loggedIn"><a><i class="fa fa-user-circle"></i><strong>Hello {{profile.firstName}}</strong></a></li>
+      <li ng-show="profile.loggedIn"><a href="#" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<div id="main">
+
+  <!-- angular templating -->
+  <!-- this is where content will be injected -->
+  <div ng-view></div>
+
+</div>
+
+<footer class="text-center">
+  <br><hr><br><br>
+  <h3>this is my task for <a href="https://msapps.mobi/" target="_blank">MSapps</a></h3>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "mongod",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "angular-material": "^1.1.9",
+    "angular-simple-toast": "^1.0.1",
+    "angular-toastr": "^2.1.1",
+    "bcrypt-nodejs": "latest",
+    "body-parser": "~1.15.2",
+    "connect-flash": "~0.1.1",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "~1.4.3",
+    "crypto-js": "^3.1.9-1",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "express-session": "~1.14.1",
+    "http-errors": "~1.6.2",
+    "method-override": "~2.3.6",
+    "mongoose": "~4.13.1",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.17.5",
+    "passport": "^0.3.2",
+    "passport-facebook": "~2.1.1",
+    "passport-google-oauth": "~1.0.0",
+    "passport-local": "~1.0.0"
+  },
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "Yirmi",
+  "license": "ISC",
+  "description": ""
+}

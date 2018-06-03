@@ -1,0 +1,56 @@
+
+<div class="container">
+    <h2>Users Table</h2>
+    <p><i class="fa fa-info"></i> <strong>info: </strong> table with all users of our app. admin users will only be accessible by admin user</p>
+    <p ng-show="profile.role == 'admin'" ><i class="fa fa-info"></i> <strong>admin:</strong>  you can upgrade users to an admin level by selecting the user you want to upgrade and press 'upgrade' at the bottom of the page. you can upgrade multiple users in one click, just check the users in the right of the table and then press 'upgrade'</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th ng-show="profile.role == 'admin'">Role</th>
+            <th ng-show="profile.role == 'admin'">slect users to upgrade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users">
+            <td ng-click="updateUser()">{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td ng-show="profile.role == 'admin'"><div contenteditable>{{user.role}}</div></td>
+            <td ng-show="profile.role == 'admin'">
+                <input type="checkbox" ng-disabled="user.role == 'admin'" ng-click="upgradeUser(user)">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="upgrade" >
+        <button  ng-show="profile.role == 'admin'" class="btn btn-primary" ng-click="upgrade()">Upgrade!</button> <p>click to upgrade selected users to admin</p>
+    </div>
+    <div class="addUser"  ng-show="profile.role == 'admin'">
+        <button  ng-show="profile.role == 'admin'" class="btn btn-success" ng-click="createUser()">Ddd new user!</button> <p>click to add a new user</p>
+    </div>
+    <form ng-hide="hideform">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" ng-model="user.firstName" class="form-control" name="firstName">
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" ng-model="user.lastName" class="form-control" name="lastName">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" ng-model="user.email" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" ng-model="user.password" class="form-control" name="password">
+        </div>
+
+        <button class="btn btn-warning" ng-click="signup()">Add</button>
+
+    </form>
+
+</div>
